@@ -1,18 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
-public class PlayerStats : MonoBehaviour
+namespace ProjectSK.Data
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerStats 
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public List<int> Knoledge { get; private set; } = new List<int>();
+        public List<int> Stuits { get; private set; } = new List<int>();
+        public int Stamina { get; private set; }
+        public int StaminaLevel { get; private set; }
+        public int StaminaExp { get; private set; }
+        public int Gold { get; private set; }
     }
 }

@@ -1,3 +1,18 @@
-﻿{
-	"name": "ProjectSK.Map.UI"
+{
+    "name": "ProjectSK.Map.UI",
+    "references": [
+        "GUID:b20a26ed67a810f41b8b671f07fc6109",
+        "GUID:037611f7fca1e9142b0713acf2f95a2d",
+        "GUID:5faaceade77b2ef48ac74b799fd5124c",
+        "GUID:5966481a256a8fb4fa04cce56d18971d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

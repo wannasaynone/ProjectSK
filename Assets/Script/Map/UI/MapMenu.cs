@@ -1,18 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using ProjectSK.Data;
 using UnityEngine;
+using ProjectSK.Data.Mission;
 
-public class MapMenu : MonoBehaviour
+namespace ProjectSK.Map.UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public class MapMenu : InitialableObject
     {
-        
-    }
+        [SerializeField] private MapButton[] mapButtons;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public override void Initial(SaveData saveData)
+        {
+            base.Initial(saveData);
+            RefreshMapButtonWithSave();
+            MissionStats.OnMissionStatsUpdated += OnMissionStatsUpdated;
+        }
+
+        private void OnMissionStatsUpdated(MissionStats missionStats)
+        {
+            RefreshMapButtonWithSave();
+        }
+
+        private void RefreshMapButtonWithSave()
+        {
+            for (int i = 0; i < mapButtons.Length; i++)
+            {
+                mapButtons[i].SetUp(Save);
+            }
+        }
+    } 
 }

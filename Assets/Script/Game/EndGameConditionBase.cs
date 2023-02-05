@@ -1,18 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using ProjectSK.Data;
 using UnityEngine;
 
-public class EndGameConditionBase : MonoBehaviour
+namespace ProjectSK.Game
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class EndGameConditionBase : ScriptableObject
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public abstract bool IsEnd(SaveData saveData);
     }
 }

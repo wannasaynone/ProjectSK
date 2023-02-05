@@ -1,18 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class CharacterStats : MonoBehaviour
+﻿namespace ProjectSK.Data
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CharacterStats 
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public string Name { get; private set; }
+        public int Horny { get; private set; }
+        public int Love { get; private set; }
+        public int Suspect { get; private set; }
+        public int Lonely { get; private set; }
     }
 }

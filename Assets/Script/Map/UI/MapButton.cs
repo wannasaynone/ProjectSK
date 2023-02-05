@@ -1,18 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using ProjectSK.Data;
 using UnityEngine;
 
-public class MapButton : MonoBehaviour
+namespace ProjectSK.Map.UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public class MapButton : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private MapEventBase mapEvent;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private SaveData saveData;
+
+        public void SetUp(SaveData saveData)
+        {
+            this.saveData = saveData;
+        }
+
+        public void Button_OnPressed()
+        {
+            if (saveData == null)
+            {
+                Debug.Log("[MapButton] saveData == null");
+                return;
+            }
+
+            mapEvent.Start(saveData);
+        }
     }
 }

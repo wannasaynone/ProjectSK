@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using ProjectSK.Data;
 
-public class InitialableObject : MonoBehaviour
+namespace ProjectSK
 {
-    // Start is called before the first frame update
-    void Start()
+    public class InitialableObject : MonoBehaviour
     {
-        
-    }
+        protected SaveData Save { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public virtual void Initial(SaveData saveData)
+        {
+            if (Save != null)
+            {
+                Debug.Log("gameObject " + name + " was initialed, but trying to do it again.");
+                return;
+            }
+
+            Save = saveData;
+        }
     }
 }

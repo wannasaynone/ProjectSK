@@ -1,18 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using ProjectSK.Data.Mission;
 
-public class SaveData : MonoBehaviour
+namespace ProjectSK.Data
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SaveData 
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public PlayerStats Player { get; private set; }
+        public MissionStats MissionStats { get; private set; }
+        public CharacterStats Rocker { get; private set; }
+        public CharacterStats Senpai { get; private set; }
+        public CharacterStats Gal { get; private set; }
     }
 }

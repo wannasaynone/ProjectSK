@@ -1,18 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
+using ProjectSK.Data;
 
-public class MapEventBase : MonoBehaviour
+namespace ProjectSK.Map
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class MapEventBase : ScriptableObject
     {
-        
-    }
+        public static event Action<MapEventBase> OnMapEventStartToStart;
+        public static event Action<MapEventBase> OnMapEventEnded;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField] private MapSetting mapSetting;
+        public MapSetting MapSetting { get { return mapSetting; } }
+
+        protected SaveData Save { get; private set; }
+
+        public void Start(SaveData saveData)
+        {
+            Save = saveData;
+            OnMapEventStartToStart?.Invoke(this);
+            DoMapEvent();
+        }
+
+        protected void EndMapEvent()
+        {
+            Save = null;
+            OnMapEventEnded?.Invoke(this);
+        }
+
+        protected abstract void DoMapEvent();
     }
 }

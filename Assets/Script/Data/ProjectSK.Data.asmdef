@@ -1,3 +1,15 @@
-﻿{
-	"name": "ProjectSK.Data"
+{
+    "name": "ProjectSK.Data",
+    "references": [
+        "GUID:5966481a256a8fb4fa04cce56d18971d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

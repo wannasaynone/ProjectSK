@@ -1,18 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using ProjectSK.Data;
+using System;
+using ProjectSK.Map;
 
-public class GameManager : MonoBehaviour
+namespace ProjectSK.Game
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameManager 
     {
-        
-    }
+        public static event Action OnDayStarted;
+        public static event Action<int> OnTimeIndexStarted;
+        public static event Action<int> OnTimdIndexEnded;
+        public static event Action OnDayEnded;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private readonly SaveData saveData;
+        private GameSetting currentGame;
+
+        public GameManager(SaveData saveData)
+        {
+            this.saveData = saveData;
+            MapEventBase.OnMapEventStartToStart += OnMapEventStartToStart;
+            MapEventBase.OnMapEventEnded += OnMapEventEnded;
+        }
+
+        private void OnMapEventStartToStart(MapEventBase obj)
+        {
+        }
+
+        private void OnMapEventEnded(MapEventBase obj)
+        {
+        }
+
+        public void StartGame(GameSetting gameSetting)
+        {
+            currentGame = gameSetting;
+        }
     }
 }

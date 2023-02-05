@@ -1,8 +1,7 @@
 {
-    "name": "ProjectSK.Game",
+    "name": "ProjectSK.Map",
     "references": [
-        "GUID:b20a26ed67a810f41b8b671f07fc6109",
-        "GUID:037611f7fca1e9142b0713acf2f95a2d"
+        "GUID:b20a26ed67a810f41b8b671f07fc6109"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
