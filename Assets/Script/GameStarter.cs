@@ -9,6 +9,7 @@ namespace ProjectSK
         private void Awake()
         {
             Data.SaveData testSave = new Data.SaveData();
+            testSave.SetUpWithDefaultSetting();
 
             InitialableObject[] initialableObjects = Resources.FindObjectsOfTypeAll<InitialableObject>();
             for (int i = 0; i < initialableObjects.Length; i++)

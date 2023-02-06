@@ -2,7 +2,7 @@
 using System;
 using ProjectSK.Data;
 
-namespace ProjectSK.Map
+namespace ProjectSK.Map.MapEvent
 {
     public abstract class MapEventBase : ScriptableObject
     {
@@ -14,14 +14,14 @@ namespace ProjectSK.Map
 
         protected SaveData Save { get; private set; }
 
-        public void Start(SaveData saveData)
+        public void StartEvent(SaveData saveData)
         {
             Save = saveData;
             OnMapEventStartToStart?.Invoke(this);
             DoMapEvent();
         }
 
-        protected void EndMapEvent()
+        protected void EndEvent()
         {
             Save = null;
             OnMapEventEnded?.Invoke(this);

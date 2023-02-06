@@ -13,6 +13,12 @@ namespace ProjectSK.Map.UI
             base.Initial(saveData);
             RefreshMapButtonWithSave();
             MissionStats.OnMissionStatsUpdated += OnMissionStatsUpdated;
+            PlayerStats.OnValueUpdated += OnPlayerStatsValueUpdated;
+        }
+
+        private void OnPlayerStatsValueUpdated()
+        {
+            RefreshMapButtonWithSave();
         }
 
         private void OnMissionStatsUpdated(MissionStats missionStats)
