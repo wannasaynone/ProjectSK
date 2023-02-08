@@ -8,10 +8,10 @@ namespace ProjectSK.Data
 
         public List<int> Knoledge { get; private set; } = new List<int>();
         public List<int> Stuits { get; private set; } = new List<int>();
-        public int Stamina { get; private set; }
-        public int StaminaLevel { get; private set; }
+        public int Stamina { get; private set; } = 100;
+        public int StaminaLevel { get; private set; } = 1;
         public int StaminaExp { get; private set; }
-        public int Gold { get; private set; }
+        public int Gold { get; private set; } 
         public int Day { get; private set; }
         public int TimeIndex { get; private set; }
 
@@ -63,6 +63,17 @@ namespace ProjectSK.Data
             if (TimeIndex < 0)
             {
                 TimeIndex = 0;
+            }
+
+            OnValueUpdated?.Invoke();
+        }
+
+        public void SetStamina(int value)
+        {
+            Stamina = value;
+            if (Stamina < 0)
+            {
+                Stamina = 0;
             }
 
             OnValueUpdated?.Invoke();

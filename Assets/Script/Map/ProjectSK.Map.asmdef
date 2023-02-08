@@ -1,6 +1,7 @@
 {
     "name": "ProjectSK.Map",
     "references": [
+        "GUID:5faaceade77b2ef48ac74b799fd5124c",
         "GUID:b20a26ed67a810f41b8b671f07fc6109"
     ],
     "includePlatforms": [],

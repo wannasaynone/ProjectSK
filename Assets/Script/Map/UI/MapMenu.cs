@@ -1,6 +1,7 @@
 ﻿using ProjectSK.Data;
 using UnityEngine;
 using ProjectSK.Data.Mission;
+using ProjectSK.Game;
 
 namespace ProjectSK.Map.UI
 {

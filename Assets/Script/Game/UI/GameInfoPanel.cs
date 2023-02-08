@@ -1,6 +1,7 @@
 ﻿using ProjectSK.Data;
 using UnityEngine.UI;
 using UnityEngine;
+using KahaGameCore.GameData.Implemented;
 
 namespace ProjectSK.Game.UI
 {
@@ -8,19 +9,27 @@ namespace ProjectSK.Game.UI
     {
         [SerializeField] private Text dayText;
         [SerializeField] private Text timeIndexText;
-
-        private SaveData saveData;
+        [SerializeField] private Text staminaText;
+        [SerializeField] private Text staminaLvText;
+        [SerializeField] private Text staminaExpText;
 
         public override void Initial(SaveData saveData)
         {
-            this.saveData = saveData;
+            base.Initial(saveData);
             PlayerStats.OnValueUpdated += OnValueUpdated;
         }
 
         private void OnValueUpdated()
         {
-            dayText.text = "Day " + saveData.Player.Day;
-            timeIndexText.text = "Time Index=" + saveData.Player.TimeIndex;
+            GameStaticDataManager gameStaticDataManager = GameService.Get<GameStaticDataManager>();
+            StaminaExpData staminaExpData = gameStaticDataManager.GetGameData<StaminaExpData>(Save.Player.StaminaLevel);
+            int currentMaxStamina = staminaExpData.Stamina;
+
+            dayText.text = "Day " + Save.Player.Day;
+            timeIndexText.text = "Time Index=" + Save.Player.TimeIndex;
+            staminaText.text = "Stamina: " + Save.Player.Stamina + " / " + currentMaxStamina;
+            staminaLvText.text = "Stamina Lv. " + Save.Player.StaminaLevel;
+            staminaExpText.text = "Stamina Exp: " + Save.Player.StaminaExp + " / " + staminaExpData.RequireExp;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using ProjectSK.Data;
 
-namespace ProjectSK
+namespace ProjectSK.Game
 {
     public class InitialableObject : MonoBehaviour
     {

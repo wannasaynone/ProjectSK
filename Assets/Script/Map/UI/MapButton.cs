@@ -33,21 +33,21 @@ namespace ProjectSK.Map.UI
                 return;
             }
 
-            if (mapEvent.MapSetting == null)
+            if (mapEvent.Setting == null)
             {
                 Debug.Log("mapEvent " + mapEvent.name + " missing map setting");
                 button.interactable = false;
                 return;
             }
 
-            MissionStats.MapNameContainer mapName = new MissionStats.MapNameContainer(mapEvent.MapSetting.MapName);
-            if (mapEvent.MapSetting.IsRequireMission && !saveData.MissionStats.IsHavingMission(mapName))
+            MissionStats.MapNameContainer mapName = new MissionStats.MapNameContainer(mapEvent.Setting.MapName);
+            if (mapEvent.Setting.IsRequireMission && !saveData.MissionStats.IsHavingMission(mapName))
             {
                 button.interactable = false;
                 return;
             }
 
-            int[] openTimeIndex = mapEvent.MapSetting.OpenTimeIndex;
+            int[] openTimeIndex = mapEvent.Setting.OpenTimeIndex;
             if (openTimeIndex != null && openTimeIndex.Length > 0)
             {
                 bool open = false;

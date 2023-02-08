@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412b89047aa4cc94ba4c7bfc5def7253, type: 3}
-  m_Name: TestResturantMapSetting
+  m_Script: {fileID: 11500000, guid: 2db07586c8b19db4984757a940989e2c, type: 3}
+  m_Name: Home
   m_EditorClassIdentifier: 
-  openTimeIndex: 000000000100000002000000
-  mapName: Resturant
-  isRequireMission: 0
+  mapSetting:
+    openTimeIndex: 
+    mapName: Home
+    isRequireMission: 0
+  increaseStaminaPersent: 0.15
