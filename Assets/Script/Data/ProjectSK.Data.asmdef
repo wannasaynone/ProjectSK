@@ -1,6 +1,8 @@
 {
     "name": "ProjectSK.Data",
-    "references": [],
+    "references": [
+        "GUID:5faaceade77b2ef48ac74b799fd5124c"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

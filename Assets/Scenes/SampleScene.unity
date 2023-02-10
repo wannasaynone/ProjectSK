@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13676fdfba2608a4a8663198d7dada76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapEvent: {fileID: 0}
+  mapEvent: {fileID: 11400000, guid: cf9e265dd41a773418f117ad6211aaf6, type: 2}
 --- !u!1 &2077741692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,8 +1540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: -385}
-  m_SizeDelta: {x: 700, y: 200}
+  m_AnchoredPosition: {x: 450, y: -342.9}
+  m_SizeDelta: {x: 700, y: 115.86957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2129886390
 MonoBehaviour:
@@ -1566,9 +1566,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 78
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 114
+    m_MaxSize: 78
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1

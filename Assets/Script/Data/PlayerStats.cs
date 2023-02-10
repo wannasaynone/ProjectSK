@@ -41,6 +41,39 @@ namespace ProjectSK.Data
             int cur = StaminaExp;
             Add(ref cur, value);
             StaminaExp = cur;
+
+            KahaGameCore.GameData.Implemented.GameStaticDataManager gameStaticDataManager = GameService.Get<KahaGameCore.GameData.Implemented.GameStaticDataManager>();
+
+            if (gameStaticDataManager == null)
+            {
+                UnityEngine.Debug.Log("[PlayerStats][AddStaminaExp] gameStaticDataManager == null");
+                return;
+            }
+
+            while(true)
+            {
+                StaminaExpData staminaExpData = gameStaticDataManager.GetGameData<StaminaExpData>(StaminaLevel);
+                int require = staminaExpData.RequireExp;
+                if (StaminaExp >= require)
+                {
+                    StaminaExp -= require;
+                    StaminaLevel++;
+
+                    staminaExpData = gameStaticDataManager.GetGameData<StaminaExpData>(StaminaLevel);
+                    require = staminaExpData.RequireExp;
+
+                    if (StaminaExp < require)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            OnValueUpdated?.Invoke();
         }
 
         public void AddDay(int value)
