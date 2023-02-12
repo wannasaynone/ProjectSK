@@ -1024,6 +1024,7 @@ MonoBehaviour:
   staminaText: {fileID: 2077741694}
   staminaLvText: {fileID: 763157596}
   staminaExpText: {fileID: 2129886390}
+  goldText: {fileID: 1841166688}
 --- !u!1 &1489931189
 GameObject:
   m_ObjectHideFlags: 0
