@@ -12,6 +12,7 @@ namespace ProjectSK.Game.UI
         [SerializeField] private Text staminaText;
         [SerializeField] private Text staminaLvText;
         [SerializeField] private Text staminaExpText;
+        [SerializeField] private Text goldText;
 
         public override void Initial(SaveData saveData)
         {
@@ -30,6 +31,7 @@ namespace ProjectSK.Game.UI
             staminaText.text = "Stamina: " + Save.Player.Stamina + " / " + currentMaxStamina;
             staminaLvText.text = "Stamina Lv. " + Save.Player.StaminaLevel;
             staminaExpText.text = "Stamina Exp: " + Save.Player.StaminaExp + " / " + staminaExpData.RequireExp;
+            goldText.text = "Gold: " + Save.Player.Gold;
         }
     }
 }

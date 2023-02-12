@@ -19,7 +19,7 @@ namespace ProjectSK.Game
         public GameManager(SaveData saveData)
         {
             this.saveData = saveData;
-            MapEventBase.OnMapEventStartToStart += OnMapEventStartToStart;
+            MapEventBase.OnMapEventBeforeStart += OnMapEventStartToStart;
             MapEventBase.OnMapEventEnded += OnMapEventEnded;
         }
 
@@ -46,7 +46,7 @@ namespace ProjectSK.Game
             OnDayStarted?.Invoke();
 
             saveData.Player.SetTimeIndex(0);
-            AddTimeIndex();
+            OnTimeIndexStarted?.Invoke(saveData.Player.TimeIndex);
         }
 
         private void AddTimeIndex()
@@ -59,7 +59,7 @@ namespace ProjectSK.Game
         {
             OnTimdIndexEnded?.Invoke(saveData.Player.TimeIndex);
 
-            if (saveData.Player.TimeIndex >= currentGame.TotalTimePerDay)
+            if (saveData.Player.TimeIndex >= currentGame.TotalTimePerDay - 1)
             {
                 EndDay();
             }

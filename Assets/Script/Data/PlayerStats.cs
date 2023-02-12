@@ -20,6 +20,7 @@ namespace ProjectSK.Data
             int cur = Gold;
             Add(ref cur, value);
             Gold = cur;
+            OnValueUpdated?.Invoke();
         }
 
         public void AddStamina(int value)
@@ -27,6 +28,7 @@ namespace ProjectSK.Data
             int cur = Stamina;
             Add(ref cur, value);
             Stamina = cur;
+            OnValueUpdated?.Invoke();
         }
 
         public void AddStaminaLevel(int value)
@@ -34,6 +36,7 @@ namespace ProjectSK.Data
             int cur = StaminaLevel;
             Add(ref cur, value);
             StaminaLevel = cur;
+            OnValueUpdated?.Invoke();
         }
 
         public void AddStaminaExp(int value)
@@ -81,6 +84,7 @@ namespace ProjectSK.Data
             int cur = Day;
             Add(ref cur, value);
             Day = cur;
+            OnValueUpdated?.Invoke();
         }
 
         public void AddTimeIndex(int value)
@@ -88,6 +92,7 @@ namespace ProjectSK.Data
             int cur = TimeIndex;
             Add(ref cur, value);
             TimeIndex = cur;
+            OnValueUpdated?.Invoke();
         }
 
         public void SetTimeIndex(int value)
@@ -126,8 +131,6 @@ namespace ProjectSK.Data
             {
                 value += add;
             }
-
-            OnValueUpdated?.Invoke();
         }
     }
 }

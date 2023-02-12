@@ -30,7 +30,7 @@ namespace ProjectSK.Map.MapEvent
             public bool IsRequireMission { get { return isRequireMission; } }
         }
 
-        public static event Action<MapEventBase> OnMapEventStartToStart;
+        public static event Action<MapEventBase> OnMapEventBeforeStart;
         public static event Action<MapEventBase> OnMapEventEnded;
 
         [SerializeField] private MapSetting mapSetting;
@@ -41,7 +41,7 @@ namespace ProjectSK.Map.MapEvent
         public void StartEvent(SaveData saveData)
         {
             Save = saveData;
-            OnMapEventStartToStart?.Invoke(this);
+            OnMapEventBeforeStart?.Invoke(this);
             DoMapEvent();
         }
 

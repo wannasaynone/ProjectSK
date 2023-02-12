@@ -17,5 +17,5 @@ MonoBehaviour:
     mapName: Resturant
     isRequireMission: 1
   requireSuitID: -1
-  costGold: 0
-  costStamina: 0
+  costGold: 300
+  costStamina: 20
